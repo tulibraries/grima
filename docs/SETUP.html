@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en-US"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Setting up Institutions and Users | grima</title>
+<meta name="generator" content="Jekyll v3.8.5">
+<meta property="og:title" content="Setting up Institutions and Users">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="grima - whispering into alma’s ear with APIs">
+<meta property="og:description" content="grima - whispering into alma’s ear with APIs">
+<meta property="og:site_name" content="grima">
+<script type="application/ld+json">
+{"description":"grima - whispering into alma’s ear with APIs","@type":"WebPage","url":"/docs/SETUP.html","headline":"Setting up Institutions and Users","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="../assets/css/style.css?v=0be73a336ce259bae00bdeaea26da30311963da5">
+    <script src="../assets/js/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1 class="header"><a href="..">grima</a></h1>
+        <p class="header">grima - whispering into alma's ear with APIs</p>
+
+        <ul>
+          
+          <li><a class="buttons github" href="https://github.com/zemkat/grima">View On GitHub</a></li>
+        </ul>
+
+        
+          <p class="header">This project is maintained by <a class="header name" href="https://github.com/zemkat">zemkat</a></p>
+        
+
+        
+      </header>
+
+      <section>
+        <h1 id="setting-up-institutions-and-users">Setting up Institutions and Users</h1>
+
+<p>Authentication in Grima is done through user accounts affiliated with
+institutions. When you first run Grima, you will be prompted to create
+an institution and its first user.</p>
+
+<h2 id="creating-your-institution">Creating your institution</h2>
+
+<p>Institutions are created using
+<a href="../grimas/AdminAddInstitution/AdminAddInstitution.html">AdminAddInstitution</a>. This will be
+called automatically if you try to run any other grima, but have not yet
+set up authentication:</p>
+
+<p><img src="images/SETUP-NewInstall.png" alt="Screenshot of AdminAddInstitution form"></p>
+
+<p><strong>Institution</strong>: This can be anything you want, like
+“University of Kentucky” or “UKY”.</p>
+
+<p><strong>API Key</strong>: Request from Ex Libris (<a href="APIKEY.html">instructions here</a>)</p>
+
+<p><strong>Admin Username</strong>: Username for the person who will be
+making other Grima accounts. If only one person will be using
+Grima, make their account here.</p>
+
+<p><strong>Admin Password</strong>: Password for the Grima admin.</p>
+
+<p><strong>Server</strong>: Use one of the following servers:</p>
+<ul>
+  <li>America: https://api-na.hosted.exlibrisgroup.com</li>
+  <li>Europe: https://api-eu.hosted.exlibrisgroup.com</li>
+  <li>Asia Pacific: https://api-ap.hosted.exlibrisgroup.com</li>
+  <li>Canada: https://api-ca.hosted.exlibrisgroup.com</li>
+  <li>China: https://api-cn.hosted.exlibrisgroup.com</li>
+</ul>
+
+<p>Click <strong>Submit</strong> to create your institution.</p>
+
+<h2 id="creating-users">Creating users</h2>
+
+<p>If someone other than you is going to use Grima, they should have their
+own login and password. You can create these with 
+<a href="../grimas/AdminAddUser/AdminAddUser.html">AdminAddUser</a>:</p>
+
+<p><img src="images/SETUP-AddUser.png" alt="Screenshot of AdminAddUser form"></p>
+
+<h2 id="managing-users">Managing users</h2>
+
+<p>You can 
+<a href="../grimas/AdminAdminUser/AdminAdminUser.html">promote</a>, 
+<a href="../grimas/AdminDemoteUser/AdminDemoteUser.html">demote</a>,
+<a href="../grimas/AdminRenameUser/AdminRenameUser.html">rename</a>,
+<a href="../grimas/AdminDeleteUser/AdminDeleteUser.html">delete</a>,
+and otherwise manage users on the 
+<a href="../grimas/AdminListUsers/AdminListUsers.html">list users page</a>.</p>
+
+<p><img src="../grimas/AdminListUsers/images/grima_list_users.png" alt="Screenshot of AdminListUsers form"></p>
+
+<h2 id="additional-institutions">Additional institutions</h2>
+
+<p>Even if all of your users are at the same institution, you may wish to
+create additional institutions to allow for different user permissions.
+All users in a given institution will be using its API key, so will
+effectively have the same permissions.</p>
+
+<p>If you set up your institution (e.g. “UKY”) to have read-write access, 
+but would like other users to have read-only access (for example, 
+to be able to Print records or view them in a Hierarchy, but not 
+change them), you could make a second institution (e.g. “UKY read-only”)
+using an API key with those permissions.</p>
+
+      </section>
+
+      <footer>
+        <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  
+
+</body></html>

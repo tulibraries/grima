@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en-US"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Local installation of grima | grima</title>
+<meta name="generator" content="Jekyll v3.8.5">
+<meta property="og:title" content="Local installation of grima">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="grima - whispering into alma’s ear with APIs">
+<meta property="og:description" content="grima - whispering into alma’s ear with APIs">
+<meta property="og:site_name" content="grima">
+<script type="application/ld+json">
+{"description":"grima - whispering into alma’s ear with APIs","@type":"WebPage","url":"/docs/LOCAL.html","headline":"Local installation of grima","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="../assets/css/style.css?v=0be73a336ce259bae00bdeaea26da30311963da5">
+    <script src="../assets/js/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1 class="header"><a href="..">grima</a></h1>
+        <p class="header">grima - whispering into alma's ear with APIs</p>
+
+        <ul>
+          
+          <li><a class="buttons github" href="https://github.com/zemkat/grima">View On GitHub</a></li>
+        </ul>
+
+        
+          <p class="header">This project is maintained by <a class="header name" href="https://github.com/zemkat">zemkat</a></p>
+        
+
+        
+      </header>
+
+      <section>
+        <h1 id="local-installation-of-grima">Local installation of grima</h1>
+
+<p>If you are just setting up grima for yourself and are using linux or mac
+(10.12+), then you likely already have all of the software grima depends on
+installed. You can just install grima itself.</p>
+
+<p>Just extract the grima-release.tar.gz whereever you want, and run the
+start script <a href="../standalone.sh"><code class="highlighter-rouge">standalone.sh</code></a>.</p>
+
+<p>Open a web-browser to http://127.0.0.1:32900/ and it’ll guide you through the 
+<a href="SETUP.html">setup</a>.</p>
+
+<p>In Ubuntu, you may need to:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apt-get install php-xml php-sqlite3 php-curl
+</code></pre></div></div>
+
+<p>If you are using windows, you may need to install Docker to have a reasonable
+local grima experience. This is not as well tested (and was difficult for the
+developers to use). You’ll probably want to install grima using:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/zemkat/grima
+</code></pre></div></div>
+
+<p>rather than using a release. The <a href="../Makefile">Makefile</a> in the git repository
+contains recipes for running grima inside various Docker provided PHP
+instances.</p>
+
+      </section>
+
+      <footer>
+        <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  
+
+</body></html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en-US"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>AddInternalNote - add an internal note to an item record | grima</title>
+<meta name="generator" content="Jekyll v3.8.5">
+<meta property="og:title" content="AddInternalNote - add an internal note to an item record">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="grima - whispering into alma’s ear with APIs">
+<meta property="og:description" content="grima - whispering into alma’s ear with APIs">
+<meta property="og:site_name" content="grima">
+<script type="application/ld+json">
+{"description":"grima - whispering into alma’s ear with APIs","@type":"WebPage","url":"/grimas/AddInternalNote/AddInternalNote.html","headline":"AddInternalNote - add an internal note to an item record","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="../../assets/css/style.css?v=0be73a336ce259bae00bdeaea26da30311963da5">
+    <script src="../../assets/js/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1 class="header"><a href="../..">grima</a></h1>
+        <p class="header">grima - whispering into alma's ear with APIs</p>
+
+        <ul>
+          
+          <li><a class="buttons github" href="https://github.com/zemkat/grima">View On GitHub</a></li>
+        </ul>
+
+        
+          <p class="header">This project is maintained by <a class="header name" href="https://github.com/zemkat">zemkat</a></p>
+        
+
+        
+      </header>
+
+      <section>
+        <h1 id="addinternalnote---add-an-internal-note-to-an-item-record">AddInternalNote - add an internal note to an item record</h1>
+<p><em>Thanks to Aaron Krebeck for suggesting this grima!</em></p>
+
+<p>This grima sets Internal Note 1 to the specified note. If no
+note is entered into the form, any existing Internal Note 1
+field will be cleared.</p>
+
+<h2 id="input">Input</h2>
+<ul>
+  <li>Internal Note 1 - Text of note to add to item record</li>
+  <li>Barcode - of item record to have internal note added</li>
+</ul>
+
+<h2 id="output">Output</h2>
+<p>This grima outputs a message indicating either:</p>
+<ul>
+  <li>success - including the MMS ID of the new copy of the bib record</li>
+  <li>error - including the error message from Alma</li>
+</ul>
+
+<p>Internal Note 1 is a persistent field, so will appear in the form
+even after it successfully runs. This makes it easier to add the
+same note to many items in succession.</p>
+
+<h2 id="api-requirements">API requirements</h2>
+<ul>
+  <li>Bibs - read/write</li>
+</ul>
+
+      </section>
+
+      <footer>
+        <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  
+
+</body></html>

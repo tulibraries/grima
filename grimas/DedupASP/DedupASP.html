@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en-US"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>DeleteTree - delete a bib record and its inventory from Alma | grima</title>
+<meta name="generator" content="Jekyll v3.8.5">
+<meta property="og:title" content="DeleteTree - delete a bib record and its inventory from Alma">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="grima - whispering into alma’s ear with APIs">
+<meta property="og:description" content="grima - whispering into alma’s ear with APIs">
+<meta property="og:site_name" content="grima">
+<script type="application/ld+json">
+{"description":"grima - whispering into alma’s ear with APIs","@type":"WebPage","url":"/grimas/DedupASP/DedupASP.html","headline":"DeleteTree - delete a bib record and its inventory from Alma","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="../../assets/css/style.css?v=0be73a336ce259bae00bdeaea26da30311963da5">
+    <script src="../../assets/js/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1 class="header"><a href="../..">grima</a></h1>
+        <p class="header">grima - whispering into alma's ear with APIs</p>
+
+        <ul>
+          
+          <li><a class="buttons github" href="https://github.com/zemkat/grima">View On GitHub</a></li>
+        </ul>
+
+        
+          <p class="header">This project is maintained by <a class="header name" href="https://github.com/zemkat">zemkat</a></p>
+        
+
+        
+      </header>
+
+      <section>
+        <h1 id="deletetree---delete-a-bib-record-and-its-inventory-from-alma">DeleteTree - delete a bib record and its inventory from Alma</h1>
+
+<p>This grima deletes a bib record and all of its inventory
+(holdings, items, and portfolios) from Alma.</p>
+
+<h2 id="input">Input</h2>
+<ul>
+  <li>MMS ID of bib record (root of the tree) to delete</li>
+</ul>
+
+<h2 id="output">Output</h2>
+<p>This grima outputs a message indicating either:</p>
+<ul>
+  <li>success - indicating the MMS ID of the bib (and inventory) deleted</li>
+  <li>error - including the error message from Alma</li>
+</ul>
+
+<h2 id="procedure">Procedure</h2>
+<p>I often use this as a skinny grima with Alma and OCLC. I search Alma for
+the record (and inventory) I want to remove.</p>
+
+<h2 id="api-requirements">API requirements</h2>
+<ul>
+  <li>Bibs - read/write</li>
+  <li>Electronic - read/write (to delete electronic inventory)</li>
+</ul>
+
+      </section>
+
+      <footer>
+        <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  
+
+</body></html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en-US"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Show Items from Holdings - show a table of all items on a holding | grima</title>
+<meta name="generator" content="Jekyll v3.8.5">
+<meta property="og:title" content="Show Items from Holdings - show a table of all items on a holding">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="grima - whispering into alma’s ear with APIs">
+<meta property="og:description" content="grima - whispering into alma’s ear with APIs">
+<meta property="og:site_name" content="grima">
+<script type="application/ld+json">
+{"description":"grima - whispering into alma’s ear with APIs","@type":"WebPage","url":"/grimas/ShowItemsFromHoldings/ShowItemsFromHoldings.html","headline":"Show Items from Holdings - show a table of all items on a holding","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="../../assets/css/style.css?v=0be73a336ce259bae00bdeaea26da30311963da5">
+    <script src="../../assets/js/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1 class="header"><a href="../..">grima</a></h1>
+        <p class="header">grima - whispering into alma's ear with APIs</p>
+
+        <ul>
+          
+          <li><a class="buttons github" href="https://github.com/zemkat/grima">View On GitHub</a></li>
+        </ul>
+
+        
+          <p class="header">This project is maintained by <a class="header name" href="https://github.com/zemkat">zemkat</a></p>
+        
+
+        
+      </header>
+
+      <section>
+        <h1 id="show-items-from-holdings---show-a-table-of-all-items-on-a-holding">Show Items from Holdings - show a table of all items on a holding</h1>
+
+<p><em>Inspired by Alma Enhancement Request #5489, #5615</em></p>
+
+<p>This grima shows a table of all the items in the specified holding.</p>
+
+<p>If the holding was created before today, the grima will query an Analytics
+report to determine the MMS ID of the bib. If it does not find the Bib (for
+example, because it was created today), it will redirect you to another
+grima
+<a href="../ShowItemsFromHoldingsB/ShowItemsFromHoldingsB.html">ShowItemsfromHoldingsB</a> 
+which also requests the MMS ID.</p>
+
+<h2 id="input">Input</h2>
+<ul>
+  <li>Holding ID of holding whose items you want to see.</li>
+</ul>
+
+<h2 id="output">Output</h2>
+<p><img src="images/ItemsFromHoldings.png" alt="Screenshot of bibliographic record"></p>
+
+<h2 id="api-requirements">API requirements</h2>
+<ul>
+  <li>Bibs - read-only (or read/write)</li>
+  <li>Analytics - read-only (or read/write)</li>
+</ul>
+
+      </section>
+
+      <footer>
+        <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  
+
+</body></html>

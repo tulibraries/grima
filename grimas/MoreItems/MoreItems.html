@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en-US"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>MoreItems - add multiple similar items to a holding | grima</title>
+<meta name="generator" content="Jekyll v3.8.5">
+<meta property="og:title" content="MoreItems - add multiple similar items to a holding">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="grima - whispering into alma’s ear with APIs">
+<meta property="og:description" content="grima - whispering into alma’s ear with APIs">
+<meta property="og:site_name" content="grima">
+<script type="application/ld+json">
+{"description":"grima - whispering into alma’s ear with APIs","@type":"WebPage","url":"/grimas/MoreItems/MoreItems.html","headline":"MoreItems - add multiple similar items to a holding","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="../../assets/css/style.css?v=0be73a336ce259bae00bdeaea26da30311963da5">
+    <script src="../../assets/js/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1 class="header"><a href="../..">grima</a></h1>
+        <p class="header">grima - whispering into alma's ear with APIs</p>
+
+        <ul>
+          
+          <li><a class="buttons github" href="https://github.com/zemkat/grima">View On GitHub</a></li>
+        </ul>
+
+        
+          <p class="header">This project is maintained by <a class="header name" href="https://github.com/zemkat">zemkat</a></p>
+        
+
+        
+      </header>
+
+      <section>
+        <h1 id="moreitems---add-multiple-similar-items-to-a-holding">MoreItems - add multiple similar items to a holding</h1>
+
+<p>This grima helps you add multiple items to a record, such as a
+set or serial record. After adding each record, you will be
+prompted to add a new one, with the option of changing fields
+like Enumeration and Chronology.</p>
+
+<h2 id="input">Input</h2>
+<ul>
+  <li>Barcode of “model” item, on which copies will be based</li>
+</ul>
+
+<h2 id="procedure">Procedure</h2>
+<p>The first form asks for a model item. If you’re adding
+the newest item to a serial, enter the barcode for the
+most recent issue, confirming that all fields (item policy, etc)
+are correct. If the holding you’re adding items to doesn’t have
+any yet, go ahead and add the first one as you normally would,
+making sure all fields are as you want them. Then enter that
+barcode into the form:
+<img src="images/MoreItems-out0.png" alt="Screenshot of grima form"></p>
+
+<p>The next form will show you some of the properties of the model
+item (on the right), and it also enter some of those into the
+form on the left, prompting you to create your new item:
+<img src="images/MoreItems-out1.png" alt="Screenshot of grima form"></p>
+
+<p>Modify the fields you need to, such as incrementing the
+Enumeration and Chronology to add as the next item. No need
+to “generate” the description; it will change as you type!
+Then scan in the new item’s barcode:
+<img src="images/MoreItems-out2.png" alt="Screenshot of grima form"></p>
+
+<p>Submit the form to create the new item. After this is done,
+it will bring up the form again, using the item you just added
+as the next model:
+<img src="images/MoreItems-out3.png" alt="Screenshot of grima form"></p>
+
+<p>Now you can quickly add lots of items in a sequence!</p>
+
+<h2 id="api-requirements">API requirements</h2>
+<ul>
+  <li>Bibs - read/write</li>
+</ul>
+
+      </section>
+
+      <footer>
+        <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  
+
+</body></html>

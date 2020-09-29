@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en-US"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Grima for developers | grima</title>
+<meta name="generator" content="Jekyll v3.8.5">
+<meta property="og:title" content="Grima for developers">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="grima - whispering into alma’s ear with APIs">
+<meta property="og:description" content="grima - whispering into alma’s ear with APIs">
+<meta property="og:site_name" content="grima">
+<script type="application/ld+json">
+{"description":"grima - whispering into alma’s ear with APIs","@type":"WebPage","url":"/docs/DEVEL.html","headline":"Grima for developers","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="../assets/css/style.css?v=0be73a336ce259bae00bdeaea26da30311963da5">
+    <script src="../assets/js/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1 class="header"><a href="..">grima</a></h1>
+        <p class="header">grima - whispering into alma's ear with APIs</p>
+
+        <ul>
+          
+          <li><a class="buttons github" href="https://github.com/zemkat/grima">View On GitHub</a></li>
+        </ul>
+
+        
+          <p class="header">This project is maintained by <a class="header name" href="https://github.com/zemkat">zemkat</a></p>
+        
+
+        
+      </header>
+
+      <section>
+        <h1 id="grima-for-developers">Grima for developers</h1>
+
+<p>The main purpose of grima itself is to make it fast and
+simple to write new workflow helpers (grimas). Each grima
+is a directory (like <code class="highlighter-rouge">MyGrima/</code>) containing files like:</p>
+<ul>
+  <li><code class="highlighter-rouge">MyGrima.xml</code> - specifying input</li>
+  <li><code class="highlighter-rouge">MyGrima.php</code> - specifying behavior</li>
+  <li><code class="highlighter-rouge">MyGrima.css</code> (optional) - styling</li>
+  <li><code class="highlighter-rouge">MyGrima.md</code> (optional) - documentation</li>
+  <li><code class="highlighter-rouge">MyGrima/images</code> (optional) - supporting image files</li>
+  <li><code class="highlighter-rouge">MyGrima/splats</code> (optional) - any fancy output</li>
+</ul>
+
+<h3 id="specifying-input-xml">Specifying Input (XML)</h3>
+
+<p>If your grima takes input (most do), you can specify those
+fields using an XML document like the following:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;GrimaForm&gt;
+    &lt;Title&gt;Grima: Insert OCLC Number&lt;/Title&gt;
+    &lt;Field
+        name="mms_id"
+        label="MMS ID of Bib"
+        autocomplete="off"
+        required="yes"
+        placeholder="Bib to edit..."
+    /&gt;
+    &lt;Field
+        name="oclcnum"
+        label="OCLC Number"
+        autocomplete="off"
+        required="yes"
+        placeholder="OCLC Number to Insert..."
+    /&gt;
+&lt;/GrimaForm&gt;
+</code></pre></div></div>
+
+<p>When you run the grima, this will generate a form like this
+one:
+<img src="images/DEVEL-InsertOclcNo-form.png" width="400px"></p>
+
+<p>The elements are:</p>
+<ul>
+  <li>GrimaForm - the root element of the input description
+    <ul>
+      <li>Title - Title of the form</li>
+      <li>Field - Input field. This is repeatable, so create one for each input.
+        <ul>
+          <li>name - the name of this field in the PHP</li>
+          <li>label - will appear above the textbox</li>
+          <li>autocomplete - should this autocomplete? (yes or no)</li>
+          <li>required - is this field required? (yes or no)</li>
+          <li>placeholder - will appear in gray in the textbox</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="specifying-behavior-php">Specifying Behavior (PHP)</h3>
+
+<p>Your grima’s behavior will be specified by its PHP file, like this one
+for the grima called DeletePortfolio:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;?php
+
+require_once("../grima-lib.php");
+
+class DeletePortfolio extends GrimaTask {
+
+    function do_task() {
+        $port = new ElectronicPortfolio();
+        $port-&gt;loadFromAlmaX($this['portfolio_id']);
+        $port-&gt;deleteFromAlma();
+        $this-&gt;addMessage('success',"Deleted portfolio {$port['portfolio_id']}: {$port['title']}");
+    }
+
+}
+
+DeletePortfolio::RunIt();
+</code></pre></div></div>
+
+<p>A few notes:</p>
+<ul>
+  <li>The file <code class="highlighter-rouge">DeletePortfolio.xml</code> specifies a field called <code class="highlighter-rouge">portfolio_id</code>,
+so we can refer to it as <code class="highlighter-rouge">$this['portfolio_id']</code> here.</li>
+  <li>Objects like ElectronicPortfolio have properties like <code class="highlighter-rouge">portfolio_id</code>
+and <code class="highlighter-rouge">title</code> that we can refer to and sometimes change. See the 
+<a href="dev/classes.html">docs</a> for each object for a complete list.</li>
+  <li>Once we have created a new object, we can run its methods like 
+<code class="highlighter-rouge">deleteFromAlma</code>, <code class="highlighter-rouge">addToAlma</code>, <code class="highlighter-rouge">updateAlma</code>. See the 
+<a href="dev/classes.html">docs</a> for each object for a complete list.</li>
+  <li>After the task succeeds, you should explicitly add a “success” message
+that will appear to let the user know the task succeeded:</li>
+</ul>
+
+<p><img src="images/DEVEL-PortDeleted.png" width="400px"></p>
+<ul>
+  <li>Other types of messages you can add are <code class="highlighter-rouge">info</code>, <code class="highlighter-rouge">warning</code>, <code class="highlighter-rouge">error</code>, and
+<code class="highlighter-rouge">debug</code>.
+Some of these are used by the Grima library as part of its error checking:</li>
+</ul>
+
+<p><img src="images/DEVEL-ErrorMessage.png" width="400px"></p>
+
+<h3 id="output-display-with-another-grima">Output: Display with another grima</h3>
+<p>The default behavior when a grima succeeds is to display the form again
+with any messages. If you want to call another grima, you can do this
+by overriding the <code class="highlighter-rouge">print_success</code> method of the GrimaTask, as is done
+in <a href="../grimas/InsertOclcNo/InsertOclcNo.html">InsertOclcNo</a>:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function print_success() {
+    do_redirect('../PrintBib/PrintBib.php?mms_id=' . $this['mms_id']);
+}
+</code></pre></div></div>
+
+<p>After the OCLC number has been successfully inserted into the specified
+record, the newly edited record is displayed using the
+<a href="../grimas/PrintBib/PrintBib.html">PrintBib</a>
+grima
+so that the user can confirmed that it worked correctly.</p>
+
+<p><a href="../grimas/Hierarchy/Hierarchy.html">Hierarchy</a> is another good choice for displaying a newly modified
+record tree.</p>
+
+<h3 id="output-splats-template-engine">Output: splats template engine</h3>
+<p>As seen in the above example, you can override the default output behavior
+by specifying your own <code class="highlighter-rouge">print_success</code> function inside your GrimaTask.</p>
+
+<p>You can also trigger different behavior in <code class="highlighter-rouge">print_success</code> using the 
+splats template engine. See <a href="../grimas/PrintBib/PrintBib.html">PrintBib</a>,
+<a href="../grimas/Hierarchy/Hierarchy.html">Hierarchy</a>, and
+<a href="../grimas/MoreItems/MoreItems.html">MoreItems</a> to see this in action.</p>
+
+<p>(Documentation coming soon!)</p>
+
+      </section>
+
+      <footer>
+        <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  
+
+</body></html>
