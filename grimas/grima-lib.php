@@ -3163,7 +3163,7 @@ class GrimaDB implements ArrayAccess, IteratorAggregate {
 			// @see: https://devcenter.heroku.com/articles/heroku-postgresql#connecting-in-php
 			if (strpos($db_url, "postgres") == 0) {
 				$db = parse_url($db_url);
-				$db_url =  sprintf(
+				$db_url =  "pgsql:" . sprintf(
 					"host=%s;port=%s;user=%s;password=%s;dbname=%s",
 					$db["host"],
 					$db["port"],
