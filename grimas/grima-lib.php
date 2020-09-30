@@ -3373,7 +3373,6 @@ class GrimaUser extends GrimaDB {
 
 		// Bindindg individually instead as ::execute() param to use specific type.
 		$query->bindValue('username', $this['username']);
-		$query->bindVAlue('password');
 		$query->bindValue('password', password_hash( $this['password'], $this->getPasswordAlgorithm() ));
 		$query->bindValue('institution', $this['institution']);
 		$query->bindValue('isAdmin', $this['isAdmin'], \PDO::PARAM_BOOL);
