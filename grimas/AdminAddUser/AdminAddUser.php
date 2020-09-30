@@ -13,7 +13,7 @@ class AdminAddUser extends GrimaTask {
 			$newuser['username'] = $username;
 			$newuser['password'] = $this['password'];
 			$newuser['institution'] = $institution;
-			$newuser['isAdmin'] = false;
+			$newuser['isAdmin'] = $newuser['isadmin'] = false;
 			$newuser->addToDB();
 			$this->addMessage('success',"User $username at $institution successfully added.");
 		} else {
