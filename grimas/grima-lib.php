@@ -3374,7 +3374,7 @@ class GrimaUser extends GrimaDB {
 			'username' => $this['username'],
 			'password' => password_hash( $this['password'], $this->getPasswordAlgorithm() ),
 			'institution' => $this['institution'],
-			'isAdmin' => $this['isAdmin'],
+			'isAdmin' => $this['isAdmin'] || false,
 		) );
 		if (!$success) {
 			$errorCode = $query->errorCode();
