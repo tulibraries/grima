@@ -3370,6 +3370,7 @@ class GrimaUser extends GrimaDB {
 				"Could not even prepare to insert into user database: [$errorCode] {$errorInfo[0]} {$errorInfo[2]}"
 			);
 		}
+		var_dump($this['isAdmin']);
 		$success = $query->execute( array(
 			'username' => $this['username'],
 			'password' => password_hash( $this['password'], $this->getPasswordAlgorithm() ),
